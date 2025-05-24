@@ -1,3 +1,6 @@
+require("config.autocmds")
+require("config.keymaps")
+require("config.options")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -16,6 +19,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
+{ import = "plugins.extras.lang.fish" },
+    { import = "plugins.extras.ai.copilot" },
+    { import = "plugins.extras.ai.copilot-chat" },
+    { import = "plugins.extras.lang.lua" },
+    { import = "plugins.extras.lang.python" },
+    { import = "plugins.extras.lang.typescript" },
+    { import = "plugins.extras.lang.tailwindcss" },
+    { import = "plugins.extras.lang.css" },
+	  {"nyoom-engineering/oxocarbon.nvim"} ,
     { import = "plugins" },
   },
   defaults = {
@@ -27,7 +39,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "default" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
