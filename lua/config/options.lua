@@ -1,7 +1,6 @@
 --- Leader keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
-
 -- User Interface settings
 vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Relative line numbers
@@ -63,3 +62,6 @@ vim.g.loaded_python3_provider = 0 -- Disable python3 provider
 vim.g.loaded_ruby_provider = 0    -- Disable ruby provider
 vim.g.loaded_perl_provider = 0    -- Disable perl provider
 vim.g.root_spec = { "cwd" }
+
+--Rounded border for all floating window
+vim.o.winborder = 'rounded'

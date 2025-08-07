@@ -8,7 +8,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-{ import = "plugins.extras.lang.fish" },
     { import = "plugins.extras.ai.copilot" },
     { import = "plugins.extras.ai.copilot-chat" },
     { import = "plugins.extras.lang.lua" },
@@ -27,7 +26,7 @@ require("lazy").setup({
     { import = "plugins.extras.lang.typescript" },
     { import = "plugins.extras.lang.tailwindcss" },
     { import = "plugins.extras.lang.css" },
-	  {"nyoom-engineering/oxocarbon.nvim"} ,
+    { "nyoom-engineering/oxocarbon.nvim" },
     { import = "plugins" },
   },
   defaults = {
@@ -43,7 +42,7 @@ require("lazy").setup({
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+  },                -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -54,7 +53,7 @@ require("lazy").setup({
         -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        "tutor",
+        -- "tutor",
         "zipPlugin",
       },
     },

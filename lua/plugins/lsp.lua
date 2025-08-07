@@ -34,10 +34,10 @@ return {
   event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 
   dependencies = {
-    { "mason-org/mason.nvim", config = true },
+    { "mason-org/mason.nvim",          config = true },
     { "mason-org/mason-lspconfig.nvim" },
-    { "j-hui/fidget.nvim", opts = {} },
-    { "folke/lazydev.nvim", opts = {} },
+    { "j-hui/fidget.nvim",             opts = {} },
+    { "folke/lazydev.nvim",            opts = {} },
     { "saghen/blink.cmp" },
   },
 
