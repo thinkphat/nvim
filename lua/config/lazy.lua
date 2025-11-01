@@ -25,6 +25,7 @@ require("lazy").setup({
     { import = "plugins.extras.lang.python" },
     { import = "plugins.extras.lang.typescript" },
     { import = "plugins.extras.lang.tailwindcss" },
+    { import = "plugins.extras.lang.go" },
     { import = "plugins.extras.lang.css" },
     { "nyoom-engineering/oxocarbon.nvim" },
     { import = "plugins" },

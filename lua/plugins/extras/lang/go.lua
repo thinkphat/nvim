@@ -30,10 +30,8 @@ return {
 
   {
     "ray-x/go.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
+    dependencies = { "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter", },
     config = function()
       require("go").setup({
         lsp_cfg = true,
@@ -42,7 +40,7 @@ return {
         lsp_inlay_hints = {
           enable = true,
         },
-        dap_debug = true, -- enable delve debug
+        dap_debug = true,
       })
     end,
     event = { "CmdlineEnter" },
