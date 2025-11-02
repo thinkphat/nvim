@@ -20,5 +20,18 @@ return {
       end,
       desc = "Toggle Lazygit",
     },
+    {
+      "<leader>tt",
+      function()
+        local Terminal = require("toggleterm.terminal").Terminal
+        local float_term = Terminal:new({
+          cmd = "fish",
+          hidden = true,
+          direction = "float",
+        })
+        float_term:toggle()
+      end,
+      desc = "Toggle Terminal",
+    }
   },
 }

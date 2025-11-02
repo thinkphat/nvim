@@ -51,8 +51,23 @@ return {
     },
     {
       "<leader><leader>",
-      "<cmd>lua require('telescope.builtin').buffers()<CR>",
-      desc = "Telescope: Open Buffers",
+      function()
+        require("telescope.builtin").buffers({
+          sort_lastused = true,
+          ignore_current_buffer = true,
+          attach_mappings = function(prompt_bufnr, map)
+            local actions = require("telescope.actions")
+            map("i", "<c-d>", function()
+              actions.delete_buffer(prompt_bufnr)
+            end)
+            map("n", "<c-d>", function()
+              actions.delete_buffer(prompt_bufnr)
+            end)
+            return true
+          end,
+        })
+      end,
+      desc = "Telescope: Open Buffers (with delete)",
     },
     {
       "<leader>sn",
@@ -103,7 +118,19 @@ return {
     { "nvim-telescope/telescope-ui-select.nvim" },
   },
   config = function()
+    local actions = require("telescope.actions")
+
     require("telescope").setup({
+      pickers = {
+        buffers = {
+          sort_lastused = true,
+          initial_mode = "normal",
+          mappings = {
+            i = { ["<c-d>"] = actions.delete_buffer },
+            n = { ["<c-d>"] = actions.delete_buffer },
+          },
+        },
+      },
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
