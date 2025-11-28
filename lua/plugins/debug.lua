@@ -18,6 +18,7 @@ return {
         "delve",
       },
     })
+    require("dap-go").setup()
 
     vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue" })
     vim.keymap.set("n", "<F1>", dap.step_into, { desc = "Debug: Step Into" })
